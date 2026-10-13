@@ -1,0 +1,5 @@
+numpy==1.26.4
+nibabel==5.3.3
+scipy==1.15.3
+antspyx==0.6.3
+SimpleITK==2.5.3
