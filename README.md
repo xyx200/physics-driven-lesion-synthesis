@@ -119,6 +119,8 @@ Joint labels use `0=background, 1=GM, 2=BG, 3=WM, 4=lesion, 5=Ven, 6=Cer, 7=BS`.
 | WMH-Baseline / WMH-Ours supplementary experiments | `dataset=WMH` and `split=train`: 60 WMH cases |
 | Paper evaluation | `split=test`: 900 cases |
 
+The GLI repair masks in `labels/reproduction_resources/gli_repair_masks/` are sourced from [johncolby/svid_paper](https://github.com/johncolby/svid_paper).
+
 **GLI training labels:** Among the 1,000 training cases in `labels/labels/GLI/`, the primary labels for the 606 cases outside the 394 clean cases used by the main method do not include added coexisting lesions. The versions with coexisting lesions are in `labels/reproduction_resources/upper_bound_supplements/`: 606 files named `GLI_<case_id>.nii.gz`.
 
 These supplementary files contain only lesion labels (`0=background, 1=lesion`) and no brain tissue labels. To obtain joint labels that include coexisting lesions, overlay the regions with value 1 in each supplementary label onto the corresponding joint label in `labels/labels/GLI/`, assigning value 4 to those regions and retaining the brain tissue labels elsewhere.
