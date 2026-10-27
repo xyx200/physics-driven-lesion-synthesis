@@ -47,7 +47,7 @@ def evaluate(pred, ref, spacing):
                 labels=[1],
                 metrics=["Dice", "Hausdorff Distance 95"],
                 advanced_metrics=[],
-            ).evaluate(voxel_spacing=spacing, connectivity=3)["1"]
+            ).evaluate(voxel_spacing=spacing, connectivity=1)["1"]
             evaluator_dice = float(result["Dice"])
             if not math.isclose(evaluator_dice, dice, rel_tol=0, abs_tol=1e-12):
                 raise RuntimeError(f"Evaluator Dice mismatch {evaluator_dice} != {dice}")
